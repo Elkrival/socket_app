@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="/socket.io/socket.io.js"></script>
+    <title>Socket.IO App</title>
+  </head>
+  <body>
+  <h3> Hello World!</h3>
+
+   <script>const socket = io();
+  const happy = async() =>{
+   socket.emit('happy',{ reason: 'it\'s my birdday'})
+  }
+  socket.on('serverMsg', (async(data) =>{
+   console.log(data.msg)
+  }))
+</script>
+  </body>
+</html>
